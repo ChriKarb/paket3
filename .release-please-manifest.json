@@ -1,8 +1,11 @@
 {
   "packages": {
     ".": {
-      "exclude-paths": [".github"]
+      "exclude-paths": [
+        ".github"
+      ]
     },
     "bin": "1.0.0"
-  }
+  },
+  ".": "1.0.0"
 }
