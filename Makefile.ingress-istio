@@ -1,0 +1,32 @@
+# tasks/Makefile.ingress-istio
+
+
+## Install actions second packet
+ingress-istio/install:
+	@mkdir istio
+	@echo "1" > namespace/version
+	@echo "Install actions second packet"
+	make namespaces/version
+
+## check if component exists 
+ingress-istio/exists: 
+	[ -d namespace ]
+	@echo "component exists"
+
+## check if component not exists 
+ingress-istio/notexists: 
+	! [ -d namespace ]
+	@echo "component does not exists"
+
+## check if component exists 
+ingress-istio/version:
+	@echo "component version"
+	@cat namespace/version 
+
+## uninstall component
+ingress-istio/uninstall:
+	@rm -rf namespace
+	@echo "component uninstalled"
+
+ingress-istio/lint:
+	@shellcheck ./bin
